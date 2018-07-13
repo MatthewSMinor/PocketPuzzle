@@ -1,9 +1,12 @@
 import puzzlefunctions
 #python game that resembles the 15 puzzle pocket game
-done = False
-#making 2d array [3][3]
-grid = [[' 1', ' 2', ' 3', ' 4'],[' 5',' 6', ' 7', ' 8'],[' 9', '10', '11', '12'],['-1', '13', '14','15']]
 
+#game loop boolean
+done = False
+
+#making 2d array [3][3]
+#grid = [[' 7', '15', ' 8', '13'],['-1',' 6', '10', '12'],[' 5', '11', ' 2', ' 9'],[' 4', ' 1', '14',' 3']]
+grid = puzzlefunctions.popGrid()
 #print the instructions
 print('Enter x to exit')
 
@@ -13,8 +16,12 @@ def printGrid():
 		print(grid[i])
 
 #initialize position of empty space
-markX = 3
-markY = 0
+for i in range(4):
+	for j in range(4):
+		if grid[i][j] == '-1':
+			markX = i
+			markY = j
+
 choiceX = 0
 choiceY = 0
 

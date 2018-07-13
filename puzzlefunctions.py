@@ -1,3 +1,5 @@
+import random
+
 
 #check if empty space is on an edge
 def isOnEdge(markX, markY):
@@ -50,3 +52,23 @@ def switch(choiceX, choiceY, markX, markY, grid):
 	tempMark = grid[markX][markY]
 	grid[choiceX][choiceY] = tempMark
 	grid[markX][markY] = tempChoice
+
+#populate the grid with random numbers w/out repeat 1 - 15 and include -1 for empty space
+def popGrid():
+	grid = []
+	grid.append([])
+	grid.append([])
+	grid.append([])
+	grid.append([])
+
+	nums = [' 1', ' 2', ' 3', ' 4', ' 5', ' 6', ' 7', ' 8', ' 9', '10', '11', '12', '13', '14', '15', '-1']
+	count = len(nums)
+
+	for i in range(4):
+		for j in range(4):
+			count = count -1
+			r = random.randint(0, count)
+			grid[i].append(nums[r])
+			nums.remove(nums[r])
+			
+	return grid
