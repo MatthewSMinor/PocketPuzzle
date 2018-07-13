@@ -72,3 +72,11 @@ def popGrid():
 			nums.remove(nums[r])
 			
 	return grid
+
+#check if the player has won
+def checkWin(grid):
+	winLayout = [[' 1', ' 2', ' 3', ' 4'],[' 5', ' 6', ' 7', ' 8'],[' 9', '10', '11', '12'],['13', '14', '15', '-1', ]]
+	for i in range(4):
+		for j in range(4):
+			if grid == winLayout:
+				return True

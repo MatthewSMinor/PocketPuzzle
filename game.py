@@ -4,11 +4,11 @@ import puzzlefunctions
 #game loop boolean
 done = False
 
-#making 2d array [3][3]
-#grid = [[' 7', '15', ' 8', '13'],['-1',' 6', '10', '12'],[' 5', '11', ' 2', ' 9'],[' 4', ' 1', '14',' 3']]
+#creates and populates the grid
 grid = puzzlefunctions.popGrid()
+
 #print the instructions
-print('Enter x to exit')
+print('\nSimple, you just type in the number you want to move and press enter.\nThe goal is too get the numbers in order.\nThe -1 is the only empty space so use it to move around.\nEnter x to exit')
 
 #function to print the contents of the grid
 def printGrid():
@@ -30,12 +30,13 @@ test = False
 
 #making main game loop
 while done is False:
+	print('\n')
 	printGrid()
 	
 	puzzlefunctions.isOnEdge(markX, markY)
-	print('The numbers that can move include: '+str(puzzlefunctions.whatCanMove(markX, markY, grid)))
+	#print('The numbers that can move include: '+str(puzzlefunctions.whatCanMove(markX, markY, grid)))
 	
-	print('Enter a number you would like to move: ')
+	#print('Enter a number you would like to move: ')
 	choice = input()
 	if puzzlefunctions.choiceInWhatCanMove(markX, markY, grid, choice):
 		#switch choice with empty space
@@ -58,8 +59,13 @@ while done is False:
 	markX = choiceX
 	markY = choiceY
 
+	#check if player won
+	if puzzlefunctions.checkWin(grid):
+		print('CONGRATS YOU WON!!!')
+		done = True
+
 	
 	#ending the game condition
-	if input() == 'x':
+	if choice == 'x':
 		done = True
 
