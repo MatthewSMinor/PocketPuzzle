@@ -16,6 +16,10 @@ This is a terminal/commandLine game where the user moves digits around a grid on
   * ./game.py
   * python3 game.py
 
+![annotation 2019-02-16 130029](https://user-images.githubusercontent.com/16438522/52903971-f55afd00-31ea-11e9-9f2c-1cae9d133bc0.jpg)
+
 # P.S.
 
 Thanks to my *beautiful* wife Jessica for some rubber-ducky debugging.
+
+
